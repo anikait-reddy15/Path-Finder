@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path Finder | Your Intelligent Campus Guide</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="animated-gradient">Introducing Path Finder</h1>
+            <h2>Your Intelligent Campus Guide</h2>
+            <p>A web-based navigation system designed to provide the shortest and most efficient routes across the campus, directly from your browser.</p>
+            <a href="#how-it-works" class="cta-button">Learn More</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="how-it-works" class="content-section hidden">
+            <h2>How It Works: The Brains Behind Path Finder</h2>
+            <p class="section-subtitle">Our system models the campus layout as a sophisticated graph, forming the backbone of efficient navigation.</p>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Nodes as Locations</h3>
+                    <p>Key campus spots like buildings, departments, and even specific rooms are represented as graph "nodes".</p>
+                </div>
+                <div class="card">
+                    <h3>Edges as Paths</h3>
+                    <p>Walkable paths, corridors, and connecting routes between locations are represented as "edges".</p>
+                </div>
+                <div class="card">
+                    <h3>Real-World Accuracy</h3>
+                    <p>Each edge is weighted based on actual distance, factoring in obstacles and accessibility for precise routing.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="algorithms" class="content-section hidden">
+            <h2>The Algorithms: Smarter Routes, Faster Journeys</h2>
+            <p class="section-subtitle">Path Finder leverages advanced graph-based pathfinding algorithms to compute optimal routes.</p>
+            <div class="algo-container">
+                <div class="algo-box">
+                    <h3>Dijkstra's Algorithm</h3>
+                    <p>Identifies the shortest path between two nodes in a graph, considering all possible routes.</p>
+                </div>
+                <div class="algo-box">
+                    <h3>A* (A-Star) Algorithm</h3>
+                    <p>An intelligent pathfinding algorithm that efficiently finds the shortest path by using heuristics to guide its search.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="content-section hidden">
+            <h2>Intuitive User Interface</h2>
+            <p class="section-subtitle">Navigating Path Finder is designed to be simple and user-friendly, ensuring a seamless experience for everyone.</p>
+            <div class="features-container">
+                <div>
+                    <h3>Easy Selection</h3>
+                    <ul>
+                        <li>Select starting and destination points from a clear dropdown menu.</li>
+                        <li>Alternatively, tap directly on the interactive campus map for quick input.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Visual Guidance</h3>
+                    <ul>
+                        <li>The computed route is visually highlighted on the map, making it easy to follow.</li>
+                        <li>Step-by-step navigation guidance ensures you stay on track.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="tech-stack" class="content-section hidden">
+            <h2>Technology Stack: Building Robust Solutions</h2>
+            <p class="section-subtitle">Path Finder is built with a powerful combination of modern web technologies.</p>
+            <div class="card-container">
+                <div class="card">
+                    <div class="icon">💻</div>
+                    <h3>Frontend</h3>
+                    <p>HTML, CSS, and JavaScript for a responsive and interactive user interface.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">⚙️</div>
+                    <h3>Backend</h3>
+                    <p>Python with Flask/Django to handle the core logic and server-side operations.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🧠</div>
+                    <h3>Path Computation</h3>
+                    <p>The powerful NetworkX library for all graph-related operations and algorithm implementation.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Path Finder Project. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
