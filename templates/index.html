@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Path Finder | Your Intelligent Campus Guide</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -16,12 +18,16 @@
             <h1 class="animated-gradient">Introducing Path Finder</h1>
             <h2>Your Intelligent Campus Guide</h2>
             <p>A web-based navigation system designed to provide the shortest and most efficient routes across the campus, directly from your browser.</p>
-            <a href="#how-it-works" class="cta-button">Learn More</a>
+            
+            <div class="button-container">
+                <a href="/app" class="cta-button">🚀 Launch App</a>
+                <a href="#how-it-works" class="cta-button secondary">Learn More</a>
+            </div>
         </div>
     </header>
 
     <main>
-        <section id="how-it-works" class="content-section hidden">
+        <section id="how-it-works" class="content-section">
             <h2>How It Works: The Brains Behind Path Finder</h2>
             <p class="section-subtitle">Our system models the campus layout as a sophisticated graph, forming the backbone of efficient navigation.</p>
             <div class="card-container">
@@ -40,7 +46,7 @@
             </div>
         </section>
 
-        <section id="algorithms" class="content-section hidden">
+        <section id="algorithms" class="content-section">
             <h2>The Algorithms: Smarter Routes, Faster Journeys</h2>
             <p class="section-subtitle">Path Finder leverages advanced graph-based pathfinding algorithms to compute optimal routes.</p>
             <div class="algo-container">
@@ -55,7 +61,7 @@
             </div>
         </section>
 
-        <section id="features" class="content-section hidden">
+        <section id="features" class="content-section">
             <h2>Intuitive User Interface</h2>
             <p class="section-subtitle">Navigating Path Finder is designed to be simple and user-friendly, ensuring a seamless experience for everyone.</p>
             <div class="features-container">
@@ -76,7 +82,7 @@
             </div>
         </section>
 
-        <section id="tech-stack" class="content-section hidden">
+        <section id="tech-stack" class="content-section">
             <h2>Technology Stack: Building Robust Solutions</h2>
             <p class="section-subtitle">Path Finder is built with a powerful combination of modern web technologies.</p>
             <div class="card-container">
@@ -88,7 +94,7 @@
                 <div class="card">
                     <div class="icon">⚙️</div>
                     <h3>Backend</h3>
-                    <p>Python with Flask/Django to handle the core logic and server-side operations.</p>
+                    <p>Python with Flask to handle the core logic and server-side operations.</p>
                 </div>
                 <div class="card">
                     <div class="icon">🧠</div>
@@ -103,6 +109,6 @@
         <p>&copy; 2025 Path Finder Project. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

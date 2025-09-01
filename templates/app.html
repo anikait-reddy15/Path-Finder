@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path Finder App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app_style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Path Finder</h1>
+            <p>Select your start and end points to find the shortest route.</p>
+        </header>
+
+        <main class="app-main">
+            <div class="controls-panel">
+                <h2>Plan Your Route</h2>
+                <div class="form-group">
+                    <label for="start-location">📍 From</label>
+                    <select id="start-location" class="location-select"></select>
+                </div>
+                <div class="form-group">
+                    <label for="end-location">🏁 To</label>
+                    <select id="end-location" class="location-select"></select>
+                </div>
+                <button id="find-path-btn">Find Shortest Path</button>
+                <div id="results" class="results-panel">
+                    <h3>Your Route:</h3>
+                    <p id="route-text">Please select locations and find a path.</p>
+                    <p id="distance-text"></p>
+                </div>
+                <a href="/" class="back-link">&larr; Back to Home</a>
+            </div>
+
+            <div class="map-panel">
+                <div class="map-container">
+                    <img src="{{ url_for('static', filename='images/campus_map.png') }}" alt="Campus Map" class="campus-map-img">
+                    <canvas id="map-canvas"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app_script.js') }}"></script>
+</body>
+</html>

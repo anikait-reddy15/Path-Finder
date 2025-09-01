@@ -1,0 +1,169 @@
+:root {
+    --bg-color: #0F0F1B;
+    --panel-color: #1A1A2E;
+    --primary-text: #F0F0F0;
+    --secondary-text: #a9a9b3;
+    --accent-color: #BE29EC;
+    --accent-gradient: linear-gradient(90deg, #E040FB, #BE29EC);
+    --border-color: #2a2a4a;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    background-color: var(--panel-color);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    border: 1px solid var(--border-color);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+header h1 {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+header p {
+    color: var(--secondary-text);
+}
+
+.app-main {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.controls-panel {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.map-panel {
+    flex: 2.5;
+    min-width: 500px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.location-select {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(190, 41, 236, 0.4);
+}
+
+.results-panel {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    flex-grow: 1; /* Makes it fill remaining space */
+}
+
+.results-panel h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+}
+
+#route-text, #distance-text {
+    color: var(--secondary-text);
+    line-height: 1.6;
+}
+
+.back-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin-top: 2rem;
+    text-align: center;
+    transition: color 0.2s;
+}
+.back-link:hover {
+    color: white;
+}
+
+/* Map specific styling */
+.map-container {
+    position: relative;
+    width: 100%;
+    /* Maintain a 16:9 aspect ratio for the map area */
+    padding-top: 56.25%; /* 9 / 16 * 100 */
+    background-color: #000;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.campus-map-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* or 'contain' */
+    opacity: 0.6; /* Make map image darker */
+}
+
+#map-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 900px) {
+    .app-main {
+        flex-direction: column;
+    }
+}
