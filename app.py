@@ -27,7 +27,7 @@ locations = {
     "CSE block":          { "lat": 17.39183659375976, "lng": 78.31947383378218 },
     "Mechanical block":   { "lat": 17.39196300740788, "lng": 78.31887771956472 },
     "Power control":      { "lat": 17.392234509147368, "lng": 78.31851643822472 },
-    "R & E block":        { "lat": 17.392480153235585, "lng": 78.318414075185 },
+    "R and E block":      { "lat": 17.392480153235585, "lng": 78.318414075185 },
     "ECE Block (N block)":{ "lat": 17.391048189483858, "lng": 78.31891851261692 },
     "Canteen":            { "lat": 17.391284860202767, "lng": 78.32059175560758 },
     "Chem lab":           { "lat": 17.39141894252225, "lng": 78.32003399150835 },
@@ -55,47 +55,84 @@ G.add_nodes_from(locations.keys())
 
 # Define edges (paths) with weights (distances).
 edges = [
-    ("Gate", "Shed 1", 140), ("Gate", "Bus Bay", 140),
-    ("Gate", "Scrap shed", 140), ("Gate", "Statue", 160),
-    ("Scrap shed", "R & E block", 100), ("Bus Bay", "Shed 1", 10),
-    ("Bus Bay", "R & E block", 170), ("Bus Bay", "Statue", 20),
-    ("Shed 1", "Statue", 20), ("Shed 1", "Shed 2", 30),
-    ("Shed 2", "Shed 3", 30), ("Shed 3", "Shed 4", 30),
-    ("Shed 4", "Shed 5", 30), ("Shed 5", "Food truck", 20),
-    ("Shed 4", "Food truck", 20), ("Food truck", "Fee Counter", 60),
-    ("Food truck", "AIDS block", 40), ("AIDS block", "Civil block", 40), 
-    ("AIDS block, Civil labs", 10), ("R & E block", "Power control", 40)
-    ("AIDS block", "Canteen", 50), ("Civil block", "CSE block", 80),
-    ("CSE block", "Mechanical block", 80), ("CSE block", "Statue", 20),
-    ("CSE block", "Circular Garden", 10), ("Mechanical block", "Power control", 40),
-    ("Power control", "Central Workshop", 30), ("Mechanical block", "R & E block", 80),
-    ("Power control", "House Wiring Lab", 30), ("R & E block", "Statue", 110), 
-    ("Statue", "Fee Counter", 60), ("Canteen", "Chem lab", 50),
-    ("Canteen", "K block", 70), ("Canteen", "Biotech block", 100),
-    ("Canteen", "Football ground", 130), ("Chem lab", "Circular Garden", 60), ("Chem lab", "Open Air Audi", 80)
+    ("Gate", "Shed 1", 140),
+    ("Gate", "Bus Bay", 140),
+    ("Gate", "Scrap shed", 140),
+    ("Gate", "Statue", 160),
+    ("Scrap shed", "R and E block", 100),
+    ("Bus Bay", "Shed 1", 10),
+    ("Bus Bay", "R and E block", 170),
+    ("Bus Bay", "Statue", 20),
+    ("Shed 1", "Statue", 20),
+    ("Shed 1", "Shed 2", 30),
+    ("Shed 2", "Shed 3", 30),
+    ("Shed 3", "Shed 4", 30),
+    ("Shed 4", "Shed 5", 30),
+    ("Shed 5", "Food truck", 20),
+    ("Shed 4", "Food truck", 20),
+    ("Food truck", "Fee Counter", 60),
+    ("Food truck", "AIDS block", 40),
+    ("AIDS block", "Civil block", 40),
+    ("AIDS block", "Civil labs", 10),
+    ("R and E block", "Power control", 40),
+    ("AIDS block", "Canteen", 50),
+    ("Civil block", "CSE block", 80),
+    ("CSE block", "Mechanical block", 80),
+    ("CSE block", "Statue", 20),
+    ("CSE block", "Circular Garden", 10),
+    ("Mechanical block", "Power control", 40),
+    ("Power control", "Central Workshop", 30),
+    ("Mechanical block", "R and E block", 80),
+    ("Power control", "House Wiring Lab", 30),
+    ("R and E block", "Statue", 110),
+    ("Statue", "Fee Counter", 60),
+    ("Canteen", "Chem lab", 50),
+    ("Canteen", "K block", 70),
+    ("Canteen", "Biotech block", 100),
+    ("Canteen", "Football ground", 130),
+    ("Chem lab", "Circular Garden", 60),
+    ("Chem lab", "Open Air Audi", 80),
     ("Circular Garden", "Open Air Audi", 40),
-    ("Circular Garden", "Central Workshop", 120), ("Central Workshop", "Library", 40)
-    ("Central Workshop", "BEE labs", 50), ("House Wiring Lab", "Library", 40),
-    ("Library", "Sports block", 30), ("Library", "BEE labs", 60),
-    ("BEE labs", "Open Air Audi", 60), ("Open Air Audi", "IT block (L block)", 40),
-    ("Open Air Audi", "Stationery", 80), ("Open Air Audi", "Robo wars arena", 40),
-    ("IT block (L block)", "ECE Block (N block)", 40), ("IT block (L block)", "Throwball court", 40),
-    ("Sports block", "Basketball court", 10), ("Sports block", "ECE Block (N block)", 110), ("Sports block", "IT block (L block)", 120),
-    ("Basketball court", "EDE Block (N block)", 10), ("ECE Block (N block)", "Throwball court", 40),
-    ("Throwball court", "Cricket ground", 60), ("ECE Block (N block)", "Cricket ground", 100),
-    ("Throwball court", "Robo wars arena", 40), ("Throwball court", "Volleyball court", 10),
-    ("Throwball court", "Biotech block", 80), ("Volleyball court", "Football ground", 10),
-    ("Volleyball court", "Cricket ground", 60), ("Robo wars arena", "Stationery", 40),
-    ("Stationery", "K block", 60), ("K block", "Biotech block", 30), ("K block", "Robo wars arena", 100),
-    ("Biotech block", "Football ground", 40)
+    ("Circular Garden", "Central Workshop", 120),
+    ("Central Workshop", "Library", 40),
+    ("Central Workshop", "BEE labs", 50),
+    ("House Wiring Lab", "Library", 40),
+    ("House Wiring Lab", "Mechanical block", 60),
+    ("Library", "Sports block", 30),
+    ("Library", "BEE labs", 60),
+    ("BEE labs", "Open Air Audi", 60),
+    ("Open Air Audi", "IT block (L block)", 40),
+    ("Open Air Audi", "Stationery", 80),
+    ("Open Air Audi", "Robo wars arena", 40),
+    ("IT block (L block)", "ECE Block (N block)", 40),
+    ("IT block (L block)", "Throwball court", 40),
+    ("Sports block", "Basketball court", 10),
+    ("Sports block", "ECE Block (N block)", 110),
+    ("Sports block", "IT block (L block)", 120),
+    ("Basketball court", "ECE Block (N block)", 10),
+    ("ECE Block (N block)", "Throwball court", 40),
+    ("Throwball court", "Cricket ground", 60),
+    ("ECE Block (N block)", "Cricket ground", 100),
+    ("Throwball court", "Robo wars arena", 40),
+    ("Throwball court", "Volleyball court", 10),
+    ("Throwball court", "Biotech block", 80),
+    ("Volleyball court", "Football ground", 10),
+    ("Volleyball court", "Cricket ground", 60),
+    ("Robo wars arena", "Stationery", 40),
+    ("Stationery", "K block", 60),
+    ("K block", "Biotech block", 30),
+    ("K block", "Robo wars arena", 100),
+    ("Biotech block", "Football ground", 40),
+    ("Civil block", "Fee Counter", 20),
 ]
+
 G.add_weighted_edges_from(edges)
 
 # --- Heuristic function for A* ---
-# This uses the manually entered lat/lng values for its calculation.
 def heuristic(u, v):
     lat1, lng1 = locations[u]['lat'], locations[u]['lng']
     lat2, lng2 = locations[v]['lat'], locations[v]['lng']
+    # A simple Euclidean distance heuristic
     return math.sqrt((lat1 - lat2)**2 + (lng1 - lng2)**2)
 
 # --- Routes ---
@@ -126,8 +163,13 @@ def find_path():
         distance = nx.astar_path_length(G, source=start, target=end, heuristic=heuristic, weight='weight')
         return jsonify({"path": path, "distance": round(distance)})
     except nx.NetworkXNoPath:
+        # This will now correctly trigger if a path truly doesn't exist
         return jsonify({"error": f"No path exists between {start} and {end}."}), 404
+    except Exception as e:
+        print(f"An unexpected error occurred in find_path: {e}") 
+        return jsonify({"error": "A server error occurred during path calculation."}), 500
 
 # Run the server
 if __name__ == '__main__':
     app.run(debug=True)
+

@@ -8,6 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- =================================================================== -->
+    <!-- UPDATED SCRIPT TAG: Added 'async' and 'defer' for optimal performance -->
+    <!-- =================================================================== -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB6wvMf4dC2wElW4b6QL3SsjXIFlPuIWs&callback=initMap&libraries=marker&v=beta" async defer></script>
+
 </head>
 <body>
     <div class="container">
@@ -17,6 +23,7 @@
         </header>
 
         <main class="app-main">
+            <!-- Left Panel: Controls and Results -->
             <div class="controls-panel">
                 <h2>Plan Your Route</h2>
                 <div class="form-group">
@@ -36,11 +43,10 @@
                 <a href="/" class="back-link">&larr; Back to Home</a>
             </div>
 
+            <!-- Right Panel: Map Visualization -->
             <div class="map-panel">
-                <div class="map-container">
-                    <img src="{{ url_for('static', filename='images/campus_map.png') }}" alt="Campus Map" class="campus-map-img">
-                    <canvas id="map-canvas"></canvas>
-                </div>
+                <!-- This div is where the Google Map will be rendered -->
+                <div id="map"></div>
             </div>
         </main>
     </div>
